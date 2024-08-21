@@ -45,8 +45,10 @@
             pictureBox10 = new PictureBox();
             label14 = new Label();
             panel5 = new Panel();
+            pictureBox11 = new PictureBox();
             label15 = new Label();
             panel6 = new Panel();
+            pictureBox1 = new PictureBox();
             panel7 = new Panel();
             label8 = new Label();
             pictureBox6 = new PictureBox();
@@ -60,8 +62,6 @@
             label12 = new Label();
             label13 = new Label();
             label1 = new Label();
-            pictureBox11 = new PictureBox();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -75,11 +75,11 @@
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label7
@@ -247,6 +247,16 @@
             panel5.Size = new Size(267, 156);
             panel5.TabIndex = 35;
             // 
+            // pictureBox11
+            // 
+            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
+            pictureBox11.Location = new Point(13, 50);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(75, 68);
+            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox11.TabIndex = 36;
+            pictureBox11.TabStop = false;
+            // 
             // label15
             // 
             label15.AutoSize = true;
@@ -273,6 +283,16 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(902, 210);
             panel6.TabIndex = 36;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(455, 76);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(75, 68);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 37;
+            pictureBox1.TabStop = false;
             // 
             // panel7
             // 
@@ -419,26 +439,6 @@
             label1.TabIndex = 37;
             label1.Text = "Personal Finance Summary";
             // 
-            // pictureBox11
-            // 
-            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(13, 50);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(75, 68);
-            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox11.TabIndex = 36;
-            pictureBox11.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(455, 76);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(75, 68);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 37;
-            pictureBox1.TabStop = false;
-            // 
             // Dashboard
             // 
             BackColor = Color.FromArgb(4, 13, 18);
@@ -470,13 +470,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
