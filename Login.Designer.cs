@@ -30,15 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
+            label4 = new Label();
+            label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            UnameTb = new TextBox();
+            PasswordTb = new TextBox();
             IncomeBtn = new PictureBox();
             label14 = new Label();
             label1 = new Label();
-            button1 = new Button();
-            label3 = new Label();
-            label4 = new Label();
+            LoginBtn = new Button();
+            CloseBtn = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IncomeBtn).BeginInit();
             SuspendLayout();
@@ -55,6 +56,28 @@
             panel1.Size = new Size(166, 327);
             panel1.TabIndex = 0;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.SeaGreen;
+            label4.Location = new Point(46, 158);
+            label4.Name = "label4";
+            label4.Size = new Size(69, 15);
+            label4.TabIndex = 40;
+            label4.Text = "Expenses";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.SeaGreen;
+            label3.Location = new Point(29, 135);
+            label3.Name = "label3";
+            label3.Size = new Size(105, 15);
+            label3.TabIndex = 39;
+            label3.Text = "Income Module";
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -66,19 +89,19 @@
             label2.TabIndex = 38;
             label2.Text = "Finance Management";
             // 
-            // textBox1
+            // UnameTb
             // 
-            textBox1.Location = new Point(211, 162);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(177, 27);
-            textBox1.TabIndex = 1;
+            UnameTb.Location = new Point(211, 162);
+            UnameTb.Name = "UnameTb";
+            UnameTb.Size = new Size(177, 27);
+            UnameTb.TabIndex = 1;
             // 
-            // textBox2
+            // PasswordTb
             // 
-            textBox2.Location = new Point(211, 227);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(177, 27);
-            textBox2.TabIndex = 2;
+            PasswordTb.Location = new Point(211, 227);
+            PasswordTb.Name = "PasswordTb";
+            PasswordTb.Size = new Size(177, 27);
+            PasswordTb.TabIndex = 2;
             // 
             // IncomeBtn
             // 
@@ -112,38 +135,29 @@
             label1.TabIndex = 36;
             label1.Text = "Password";
             // 
-            // button1
+            // LoginBtn
             // 
-            button1.BackColor = Color.FromArgb(98, 148, 255);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(230, 267);
-            button1.Name = "button1";
-            button1.Size = new Size(143, 41);
-            button1.TabIndex = 37;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
+            LoginBtn.BackColor = Color.FromArgb(98, 148, 255);
+            LoginBtn.FlatStyle = FlatStyle.Flat;
+            LoginBtn.Location = new Point(230, 267);
+            LoginBtn.Name = "LoginBtn";
+            LoginBtn.Size = new Size(143, 41);
+            LoginBtn.TabIndex = 37;
+            LoginBtn.Text = "Login";
+            LoginBtn.UseVisualStyleBackColor = false;
+            LoginBtn.Click += LoginBtn_Click;
             // 
-            // label3
+            // CloseBtn
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.SeaGreen;
-            label3.Location = new Point(29, 135);
-            label3.Name = "label3";
-            label3.Size = new Size(105, 15);
-            label3.TabIndex = 39;
-            label3.Text = "Income Module";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.SeaGreen;
-            label4.Location = new Point(46, 158);
-            label4.Name = "label4";
-            label4.Size = new Size(69, 15);
-            label4.TabIndex = 40;
-            label4.Text = "Expenses";
+            CloseBtn.AutoSize = true;
+            CloseBtn.BackColor = Color.WhiteSmoke;
+            CloseBtn.ForeColor = Color.Crimson;
+            CloseBtn.Location = new Point(422, 9);
+            CloseBtn.Name = "CloseBtn";
+            CloseBtn.Size = new Size(18, 19);
+            CloseBtn.TabIndex = 38;
+            CloseBtn.Text = "X";
+            CloseBtn.Click += CloseBtn_Click;
             // 
             // Login
             // 
@@ -151,12 +165,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(452, 327);
-            Controls.Add(button1);
+            Controls.Add(CloseBtn);
+            Controls.Add(LoginBtn);
             Controls.Add(label1);
             Controls.Add(label14);
             Controls.Add(IncomeBtn);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(PasswordTb);
+            Controls.Add(UnameTb);
             Controls.Add(panel1);
             Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -174,14 +189,15 @@
         #endregion
 
         private Panel panel1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox UnameTb;
+        private TextBox PasswordTb;
         private PictureBox IncomeBtn;
         private Label label14;
         private Label label1;
-        private Button button1;
+        private Button LoginBtn;
         private Label label2;
         private Label label3;
         private Label label4;
+        private Label CloseBtn;
     }
 }

@@ -30,19 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incomes));
             label7 = new Label();
-            dataGridView1 = new DataGridView();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            IncomeList = new DataGridView();
+            DeleteBtn = new Button();
+            EditBtn = new Button();
+            AddBtn = new Button();
             label5 = new Label();
-            textBox5 = new TextBox();
+            DescTb = new TextBox();
             label4 = new Label();
-            textBox4 = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            CatTb = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            AmountTb = new TextBox();
+            NameTb = new TextBox();
             pictureBox7 = new PictureBox();
             label6 = new Label();
             panel2 = new Panel();
@@ -54,7 +53,8 @@
             label1 = new Label();
             panel1 = new Panel();
             pictureBox6 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            DateTb = new DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)IncomeList).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
@@ -77,58 +77,62 @@
             label7.TabIndex = 33;
             label7.Text = "Income List";
             // 
-            // dataGridView1
+            // IncomeList
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(313, 98);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(666, 409);
-            dataGridView1.TabIndex = 32;
+            IncomeList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            IncomeList.Location = new Point(313, 98);
+            IncomeList.Name = "IncomeList";
+            IncomeList.Size = new Size(666, 409);
+            IncomeList.TabIndex = 32;
+            IncomeList.CellContentClick += IncomeList_CellContentClick;
             // 
-            // button3
+            // DeleteBtn
             // 
-            button3.BackColor = Color.Gold;
-            button3.FlatAppearance.BorderColor = Color.Gold;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseOverBackColor = Color.DarkGreen;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic);
-            button3.Location = new Point(143, 478);
-            button3.Name = "button3";
-            button3.Size = new Size(101, 25);
-            button3.TabIndex = 31;
-            button3.Text = "Delete Income";
-            button3.UseVisualStyleBackColor = false;
+            DeleteBtn.BackColor = Color.Gold;
+            DeleteBtn.FlatAppearance.BorderColor = Color.Gold;
+            DeleteBtn.FlatAppearance.BorderSize = 0;
+            DeleteBtn.FlatAppearance.MouseOverBackColor = Color.DarkGreen;
+            DeleteBtn.FlatStyle = FlatStyle.Flat;
+            DeleteBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic);
+            DeleteBtn.Location = new Point(143, 478);
+            DeleteBtn.Name = "DeleteBtn";
+            DeleteBtn.Size = new Size(101, 25);
+            DeleteBtn.TabIndex = 31;
+            DeleteBtn.Text = "Delete Income";
+            DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Click += DeleteBtn_Click;
             // 
-            // button2
+            // EditBtn
             // 
-            button2.BackColor = Color.Gold;
-            button2.FlatAppearance.BorderColor = Color.Gold;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseOverBackColor = Color.DarkGreen;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic);
-            button2.Location = new Point(205, 447);
-            button2.Name = "button2";
-            button2.Size = new Size(101, 25);
-            button2.TabIndex = 30;
-            button2.Text = "Edit Income";
-            button2.UseVisualStyleBackColor = false;
+            EditBtn.BackColor = Color.Gold;
+            EditBtn.FlatAppearance.BorderColor = Color.Gold;
+            EditBtn.FlatAppearance.BorderSize = 0;
+            EditBtn.FlatAppearance.MouseOverBackColor = Color.DarkGreen;
+            EditBtn.FlatStyle = FlatStyle.Flat;
+            EditBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic);
+            EditBtn.Location = new Point(205, 447);
+            EditBtn.Name = "EditBtn";
+            EditBtn.Size = new Size(101, 25);
+            EditBtn.TabIndex = 30;
+            EditBtn.Text = "Edit Income";
+            EditBtn.UseVisualStyleBackColor = false;
+            EditBtn.Click += EditBtn_Click;
             // 
-            // button1
+            // AddBtn
             // 
-            button1.BackColor = Color.Gold;
-            button1.FlatAppearance.BorderColor = Color.Gold;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.DarkGreen;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic);
-            button1.Location = new Point(77, 447);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 25);
-            button1.TabIndex = 29;
-            button1.Text = "Add Income";
-            button1.UseVisualStyleBackColor = false;
+            AddBtn.BackColor = Color.Gold;
+            AddBtn.FlatAppearance.BorderColor = Color.Gold;
+            AddBtn.FlatAppearance.BorderSize = 0;
+            AddBtn.FlatAppearance.MouseOverBackColor = Color.DarkGreen;
+            AddBtn.FlatStyle = FlatStyle.Flat;
+            AddBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic);
+            AddBtn.Location = new Point(77, 447);
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new Size(101, 25);
+            AddBtn.TabIndex = 29;
+            AddBtn.Text = "Add Income";
+            AddBtn.UseVisualStyleBackColor = false;
+            AddBtn.Click += AddBtn_Click;
             // 
             // label5
             // 
@@ -140,14 +144,15 @@
             label5.TabIndex = 28;
             label5.Text = "Income Description";
             // 
-            // textBox5
+            // DescTb
             // 
-            textBox5.BackColor = Color.FromArgb(4, 13, 18);
-            textBox5.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(111, 398);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(149, 26);
-            textBox5.TabIndex = 27;
+            DescTb.BackColor = Color.FromArgb(4, 13, 18);
+            DescTb.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DescTb.ForeColor = SystemColors.Info;
+            DescTb.Location = new Point(111, 398);
+            DescTb.Name = "DescTb";
+            DescTb.Size = new Size(149, 26);
+            DescTb.TabIndex = 27;
             // 
             // label4
             // 
@@ -159,15 +164,6 @@
             label4.TabIndex = 26;
             label4.Text = "Income Date";
             // 
-            // textBox4
-            // 
-            textBox4.BackColor = Color.FromArgb(4, 13, 18);
-            textBox4.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(111, 334);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(149, 26);
-            textBox4.TabIndex = 25;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -178,14 +174,15 @@
             label3.TabIndex = 24;
             label3.Text = "Income Category";
             // 
-            // textBox3
+            // CatTb
             // 
-            textBox3.BackColor = Color.FromArgb(4, 13, 18);
-            textBox3.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(111, 271);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(149, 26);
-            textBox3.TabIndex = 23;
+            CatTb.BackColor = Color.FromArgb(4, 13, 18);
+            CatTb.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CatTb.ForeColor = SystemColors.Info;
+            CatTb.Location = new Point(111, 271);
+            CatTb.Name = "CatTb";
+            CatTb.Size = new Size(149, 26);
+            CatTb.TabIndex = 23;
             // 
             // label2
             // 
@@ -197,23 +194,25 @@
             label2.TabIndex = 21;
             label2.Text = "Income Amount";
             // 
-            // textBox2
+            // AmountTb
             // 
-            textBox2.BackColor = Color.FromArgb(4, 13, 18);
-            textBox2.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(111, 205);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(149, 26);
-            textBox2.TabIndex = 20;
+            AmountTb.BackColor = Color.FromArgb(4, 13, 18);
+            AmountTb.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AmountTb.ForeColor = SystemColors.Info;
+            AmountTb.Location = new Point(111, 205);
+            AmountTb.Name = "AmountTb";
+            AmountTb.Size = new Size(149, 26);
+            AmountTb.TabIndex = 20;
             // 
-            // textBox1
+            // NameTb
             // 
-            textBox1.BackColor = Color.FromArgb(4, 13, 18);
-            textBox1.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(111, 138);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(149, 26);
-            textBox1.TabIndex = 17;
+            NameTb.BackColor = Color.FromArgb(4, 13, 18);
+            NameTb.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameTb.ForeColor = SystemColors.Info;
+            NameTb.Location = new Point(111, 138);
+            NameTb.Name = "NameTb";
+            NameTb.Size = new Size(149, 26);
+            NameTb.TabIndex = 17;
             // 
             // pictureBox7
             // 
@@ -329,27 +328,40 @@
             pictureBox6.TabIndex = 5;
             pictureBox6.TabStop = false;
             // 
+            // DateTb
+            // 
+            DateTb.CalendarForeColor = Color.FromArgb(192, 192, 0);
+            DateTb.CalendarMonthBackground = Color.FromArgb(192, 64, 0);
+            DateTb.CalendarTitleBackColor = Color.Fuchsia;
+            DateTb.CalendarTitleForeColor = Color.FromArgb(128, 64, 0);
+            DateTb.CalendarTrailingForeColor = Color.FromArgb(0, 192, 192);
+            DateTb.Format = DateTimePickerFormat.Short;
+            DateTb.Location = new Point(111, 344);
+            DateTb.Name = "DateTb";
+            DateTb.Size = new Size(152, 23);
+            DateTb.TabIndex = 34;
+            // 
             // Incomes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(4, 13, 18);
             ClientSize = new Size(993, 533);
+            Controls.Add(DateTb);
             Controls.Add(pictureBox6);
             Controls.Add(label7);
-            Controls.Add(dataGridView1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(IncomeList);
+            Controls.Add(DeleteBtn);
+            Controls.Add(EditBtn);
+            Controls.Add(AddBtn);
             Controls.Add(label5);
-            Controls.Add(textBox5);
+            Controls.Add(DescTb);
             Controls.Add(label4);
-            Controls.Add(textBox4);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(CatTb);
             Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(AmountTb);
+            Controls.Add(NameTb);
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -358,7 +370,7 @@
             Name = "Incomes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Incomes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)IncomeList).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -376,19 +388,18 @@
         #endregion
 
         private Label label7;
-        private DataGridView dataGridView1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private DataGridView IncomeList;
+        private Button DeleteBtn;
+        private Button EditBtn;
+        private Button AddBtn;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox DescTb;
         private Label label4;
-        private TextBox textBox4;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox CatTb;
         private Label label2;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox AmountTb;
+        private TextBox NameTb;
         private PictureBox pictureBox7;
         private Label label6;
         private Panel panel2;
@@ -400,5 +411,6 @@
         private Label label1;
         private Panel panel1;
         private PictureBox pictureBox6;
+        private DateTimePicker DateTb;
     }
 }
