@@ -21,8 +21,3 @@ It features user authentication via a login form and basic CRUD operations for f
 - **Shared Functions**  
   Reusable utility methods for common operations (e.g., data handling, calculations).
 
-## Technologies Used
-
-- **Language**: C#  
-- **Framework**: .NET Windows Forms  
-- **IDE**: Visual Studio (solution file included)
